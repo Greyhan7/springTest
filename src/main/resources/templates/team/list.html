@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>그룹명</th>
+                <th>소속사</th>
+                <th>데뷔일</th>
+                <th>인원</th>
+                <th>음악방송 1위 경험</th>
+            </tr>
+        </thead>
 
+        <tbody th:each="team : ${list}">
+            <tr>
+                <td th:text="${team.id}"></td>
+                <td th:text="${team.name}"></td>
+                <td th:text="${team.company}"></td>
+                <td th:text="${#dates.format(team.debut,'yyyy-MM-dd')}"></td>
+                <td th:text="${team.total}"></td>
+                <td th:text="${team.award}"></td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>

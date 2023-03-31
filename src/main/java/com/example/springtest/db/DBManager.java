@@ -1,10 +1,14 @@
 package com.example.springtest.db;
 
+import com.example.springtest.vo.TeamVO;
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBManager {
     public static SqlSessionFactory sqlSessionFactory;
@@ -18,6 +22,15 @@ public class DBManager {
             System.out.println(e.getMessage());
         }
     }
+
+public static List<TeamVO> findAllTeam(){
+        List<TeamVO> list = new ArrayList<>();
+        SqlSession session =sqlSessionFactory.openSession();
+        list = session.selectList("team.findAll");
+        session.close();
+
+        return list;
+}
 
 
 }
