@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<figure>
     <table border="1">
         <thead>
             <tr>
@@ -23,12 +25,22 @@
                 <td th:text="${team.id}"></td>
                 <td th:text="${team.name}"></td>
                 <td th:text="${team.company}"></td>
-                <td th:text="${#dates.format(team.debut,'yyyy-MM-dd')}"></td>
+                <td th:text="${#strings.substring(team.debut, 0,10)}"></td>
                 <td th:text="${team.total}"></td>
                 <td th:text="${team.award}"></td>
             </tr>
         </tbody>
     </table>
+</figure>
+
+    <!--grid-->
+    <div class="grid">
+        <div>르세라핌</div>
+        <div>아이브</div>
+        <div>뉴진스</div>
+        <div>엔믹스</div>
+        <div>에스파</div>
+    </div>
 
 </body>
 </html>

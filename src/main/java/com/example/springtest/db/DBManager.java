@@ -32,5 +32,14 @@ public static List<TeamVO> findAllTeam(){
         return list;
 }
 
+public static int insertTeam(TeamVO teamVO){
+        int re = -1;
+        SqlSession session = sqlSessionFactory.openSession();
+        re = session.insert("team.insertTeam", teamVO);
+        session.commit();
+        session.close();
+        return re;
+}
+
 
 }

@@ -8,4 +8,14 @@
     select * from team
   </select>
 
+  <insert id="insertTeam" parameterType="teamVO">
+    insert into team(id, name, company, debut, total, award, logo)
+    values(#{id}, #{name}, #{company}, #{debut}, #{total}, #{award}, #{logo})
+  </insert>
+
+  <update id="updateTeam" parameterType="teamVO">
+    update team set name=#{name}, company=#{company}, debut=#{debut}, total=#{total}, award=#{award}, logo=#{logo}
+    where id=#{id}
+  </update>
+
 </mapper>

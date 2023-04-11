@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<form id="insertTeam" action="/team/insert" method="post" enctype="multipart/form-data">
+    <!-- Grid -->
+    <div class="grid">
+        <!-- Markup example 1: input is inside label -->
+        <label for="id">
+            ID
+            <input type="number" id="id" name="id" placeholder="id" required>
+        </label>
 
+        <label for="name">
+            팀 이름
+            <input type="text" id="name" name="name" placeholder="팀 이름" required>
+        </label>
+
+        <label for="company">
+            소속사
+            <input type="text" id="company" name="company" placeholder="소속사" required>
+        </label>
+
+        <label for="debut">
+            데뷔일
+            <input type="date" id="debut" name="debut">
+        </label>
+
+        <label for="total">
+            인원수
+            <input type="number" id="total" name="total" placeholder="인원수" required>
+        </label>
+
+        <label for="award">
+            수상경력
+            <input type="text" id="award" name="award" placeholder="수상경력" required>
+        </label>
+
+        <label for="uploadFile">
+            로고
+            <input type="file" id="uploadFile" name="uploadFile">
+        </label>
+    </div>
+
+    <!-- Button -->
+    <button type="submit">등록</button>
+</form>
 </body>
 </html>

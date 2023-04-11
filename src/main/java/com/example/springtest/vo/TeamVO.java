@@ -6,20 +6,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class TeamVO {
-
     private int id;
     private String name;
     private String company;
-    private Date debut;
+    private String debut;
     private int total;
     private String award;
-
     private String logo;
     @Transient
     private MultipartFile uploadFile;
